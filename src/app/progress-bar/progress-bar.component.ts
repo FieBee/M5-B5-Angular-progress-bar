@@ -7,6 +7,19 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ProgressBarComponent implements OnInit {
 
+
+
+  @Input() backgroundColor = '#e06b6b';
+  @Input() progressColor = '#52be56';
+  @Input() progress = 0;
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.loading();
+  }
+
   loading() {
     let interval = setInterval(() => {
       this.progress = +this.progress + 5;
@@ -16,14 +29,5 @@ export class ProgressBarComponent implements OnInit {
     }, 1000);
   }
 
-  @Input() backgroundColor = '#D9D9D9';
-  @Input() progressColor = '#4CAF50';
-  @Input() progress = 0;
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
